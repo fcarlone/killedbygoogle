@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render FooterContainer correctly 1`] = `
+<styled.footer>
+  <a
+    href="https://twitter.com/killedbygoogle"
+  >
+    @killedbygoogle
+  </a>
+   - 
+  <a
+    href="https://github.com/codyogden/killedbygoogle"
+  >
+    GitHub
+  </a>
+   - 
+  <a
+    href="https://codyogden.com"
+  >
+    Cody Ogden
+  </a>
+</styled.footer>
+`;
