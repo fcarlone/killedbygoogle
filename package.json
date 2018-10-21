@@ -7,11 +7,7 @@
   "author": "Cody Ogden",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/preset-react": "^7.0.0",
     "@types/prop-types": "^15.5.5",
-    "babel-loader": "^8.0.0",
     "css-loader": "^1.0.0",
     "eslint": "^5.4.0",
     "eslint-config-airbnb": "^17.1.0",
@@ -28,18 +24,40 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "babel-cli": "6.24.1",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "date-fns": "^2.0.0-alpha.16",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "enzyme-to-json": "^3.3.4",
+    "jest": "^23.6.0",
     "preact": "^8.3.1",
     "preact-compat": "^3.18.3",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-test-renderer": "^16.5.2",
     "styled-components": "^3.4.6"
   },
   "scripts": {
     "build": "yarn lint && yarn webpack --mode=production",
     "dev": "webpack-dev-server --config ./webpack.config.js --mode=development",
     "lint": "eslint \"src/**/*.{jsx,js}\" && eslint graveyard.json && node graveyard.test.js",
-    "test": "yarn run build"
+    "test": "jest"
+  },
+  "jest": {
+    "setupFiles": [
+      "raf/polyfill",
+      "<rootDir>/src/tests/setupTests.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }
